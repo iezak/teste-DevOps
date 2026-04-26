@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 import random
 
 app = FastAPI()
@@ -23,8 +24,8 @@ async def create_estudante(estudante: Estudante):
 
 @app.put("/estudantes/update/{id_estudante}")
 async def update_estudante(id_estudante: int):
-    return id.estudante > 0
+    return id_estudante > 0
 
-@app.put("/estudantes/delete/{id_estudante}")
+@app.delete("/estudantes/delete/{id_estudante}")
 async def delete_estudante(id_estudante: int):
-    return id.estudante > 0
+    return id_estudante > 0
